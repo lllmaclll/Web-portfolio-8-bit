@@ -2,20 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'TAChaiLaiPixel';
+  src: url('/fonts/TAChaiLai_Pixelforpersonal/TA ChaiLai_Pixel For Personal user.otf') format('opentype'),
+       url('/fonts/TAChaiLai_Pixelforpersonal/TA ChaiLai_Pixel For Personal user.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'MOONNight';
+  src: url('/fonts/Demo Version 1.0.0/MOON Night DEMO Mac.otf') format('opentype'),
+       url('/fonts/Demo Version 1.0.0/MOON Night DEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.moon-font {
+  font-family: 'MOONNight', sans-serif;
+  font-size: 36px !important;
+  line-height: 1;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'TAChaiLaiPixel', sans-serif !important;
+}
+
+/* เพิ่มคลาสใหม่ใน globals.css */
+.bg-portfolio-dark {
+  background-image: url('/images/background-dark.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+.bg-portfolio-light {
+  background-image: url('/images/background-light-1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* for logo wall component start */
+@layer utilities {
+  .mask-horizontal {
+    @apply [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,rgba(0,0,0,0)_100%)]
+           [mask-size:cover]
+           [mask-repeat:no-repeat];
+  }
+
+  .mask-vertical {
+    @apply [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,rgba(0,0,0,0)_100%)]
+           [mask-size:cover]
+           [mask-repeat:no-repeat];
+  }
+
+  .paused .animate-scrollX,
+  .paused .animate-scrollY {
+    animation-play-state: paused !important;
+  }
+
+  .reverse-x {
+    animation-direction: reverse;
+    animation-delay: -3s;
+  }
+}
+/* for logo wall component end */
+
+/* .nes-table td, .nes-table th {
+  border-width: 1px !important;
+} */
+
+@media (-webkit-device-pixel-ratio >= 0) and (resolution >= 0.001dpcm) {
+  .nes-btn {
+      border-image-repeat: unset !important;
+  }
+}
+
+@media (-webkit-device-pixel-ratio >= 0) and (resolution >= 0.001dpcm) {
+  .nes-input, .nes-textarea {
+      border-image-repeat: unset !important;
+  }
 }

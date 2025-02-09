@@ -1,0 +1,43 @@
+{
+    "my_portfolio": "My Portfolio",
+    "home": "Home",
+    "about": "About",
+    "project": "Project",
+    "contact": "Contact",
+    
+    "your_name": "Your name",
+    "your_email": "Your email",
+    "your_message": "Your message",
+    "submit": "Submit",
+    "please_enter_your_name": "Please enter your name.",
+    "please_enter_your_email": "Please enter your email.",
+    "please_enter_your_message": "Please enter your message.",
+
+    "profile": "PROFILE",
+    "nickname": "I'm Macky!",
+    "name": "Charuwat Sornkerd",
+    "position": "Fullstack Developer & Pixel Art Enthusiast",
+    "introduce_yourself": "Hello, my name is Charuwat Sonkerd, nickname Macky. I have been working for more than 2 years. Throughout this time, I have learned many things and developed myself. I will be committed to learning, working, and developing myself for the benefit of the organization. I am ready for new experiences and challenges. I hope you are interested in me.",
+    "personal_profile": "Personal profile",
+    "date_of_birth": "Date of Birth : 24 October 1999.",
+    "nationality": "Nationality : Thai.",
+    "age": "Age : 25 years.",
+    "work_experience": "Work experience",
+    "work_line_1": "Worked as a programmer at Thanes Development Co.,Ltd. for 2 years.",
+    "work_line_2": "Internship at National Telecom Public Company Limited (NT) Sakon Nakhon Province for 4 months.",
+    "education_history": "Education history",
+    "education_line_1": "2018-2022 Study Computer Engineering, Faculty of Science and Engineering, Kasetsart University, Sakon Nakhon Campus.",
+    "education_line_2": "2012-2017 Study at Sakonraj Wittayanukul School, Sakon Nakhon Province.",
+    "education_line_3": "2004-2011 Study at Sakon Nakhon Kindergarten School, Sakon Nakhon Province.",
+    "skills": "Skills",
+    "category": "Category",
+    "example_technologies": "Example Technologies",
+
+    "projects": "Projects",
+    "project_example_title_1": "Game Portfolio",
+    "project_example__introduce_1": "A showcase of my game development projects.",
+    "project_view": "View",
+    "project_example_title_2": "8-Bit Art Gallery",
+    "project_example__introduce_2": "A collection of my pixel art designs."
+  }
+  
