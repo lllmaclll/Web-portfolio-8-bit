@@ -10,13 +10,6 @@ function NavBar() {
   const [isPlaying, setIsPlaying] = useState(false); // สถานะเล่น/ปิดเสียง
   const audioRef = useRef<HTMLAudioElement | null>(null); // ใช้อ้างอิงถึง <audio>
 
-  // const playAudio = () => {
-  //   if (audioRef.current) {
-  //     audioRef.current.play().catch((error) => console.error("Autoplay blocked:", error));
-  //     setIsPlaying(true); // ตั้งค่าให้เพลงกำลังเล่น
-  //   }
-  // };
-
   const toggleAudio = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -53,7 +46,7 @@ function NavBar() {
         </h1>
       </Link>
 
-      <div className="flex gap-2">
+      <div className="flex gap-8">
         <Link href={"/"}>{t('home')}</Link>
         <Link href={"/backoffice/about"}>{t('about')}</Link>
         <Link href={"/backoffice/project"}>{t('project')}</Link>
@@ -68,14 +61,12 @@ function NavBar() {
             <FaVolumeMute className="text-red-400" size={24} />
           )}
         </button>
-
         <div className="flex justify-center items-center">
           <button onClick={changeLanguage} className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none me-2">
             <FaGlobe className="text-sky-400" size={24} />
           </button>
           <div>{i18n.language.toUpperCase()}</div>
         </div>
-
         <button onClick={toggleTheme} className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none">
           {isDarkMode ? (
             <FaMoon className="text-yellow-300" size={24} />

@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext"; // นำเข้า ThemeProvider
 import NavBar from "@/app/components/NavBar";
 import I18nProvider from "./context/I18nProvider";
+import Layout from "./components/Layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,12 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <I18nProvider>
           <ThemeProvider>
-            {/* Navbar เป็น Client Component */}
-            <NavBar />
-            <main>{children}</main>
+            {/* <NavBar /> */}
+            <main>
+              <Layout>
+                {children}
+              </Layout>
+            </main>
           </ThemeProvider>
         </I18nProvider>
       </body>

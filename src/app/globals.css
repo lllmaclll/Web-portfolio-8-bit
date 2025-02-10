@@ -28,7 +28,7 @@ body {
   font-family: 'TAChaiLaiPixel', sans-serif !important;
 }
 
-/* เพิ่มคลาสใหม่ใน globals.css */
+/* background start */
 .bg-portfolio-dark {
   background-image: url('/images/background-dark.jpg') !important;
   background-size: cover !important;
@@ -44,6 +44,7 @@ body {
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
 }
+/* background end */
 
 /* for logo wall component start */
 @layer utilities {
@@ -71,10 +72,7 @@ body {
 }
 /* for logo wall component end */
 
-/* .nes-table td, .nes-table th {
-  border-width: 1px !important;
-} */
-
+/* border start */
 @media (-webkit-device-pixel-ratio >= 0) and (resolution >= 0.001dpcm) {
   .nes-btn {
       border-image-repeat: unset !important;
@@ -86,3 +84,4 @@ body {
       border-image-repeat: unset !important;
   }
 }
+/* border end */
