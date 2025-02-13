@@ -51,37 +51,21 @@ function AboutPage() {
     <div className={`flex flex-col items-center p-8`}>
       <FadeContent blur={true} duration={2000} easing="ease-in-out" initialOpacity={0}>
         <FadeInLeft>
-          <section className={`mt-8 w-full max-w-4xl nes-container is-rounded ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"} p-4 text-center`}>
-            {/* <h2 className="flex text-2xl">
-              <TypeAnimation
-                sequence={[1000, t('profile')]}
-                speed={40}
-                // repeat={Infinity}
-                cursor={false}
-              />
-            </h2> */}
-            <h2 className="flex text-2xl">{t('profile')}</h2>
+          <section className={`mt-8 nes-container is-rounded ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"} p-4 text-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl`}>
+            <h2 className="md:flex text-2xl">{t('profile')}</h2>
 
             <div className="w-full justify-items-center">
               <PixelTransition
                 firstContent={
                   <img
                     src="/images/profile.jpg"
-                    // src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
+                    className="w-1/2 md:w-1/3 max-w-xs" 
                     alt="default pixel transition content, a cat!"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 }
                 secondContent={
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "grid",
-                      placeItems: "center",
-                      backgroundColor: "#111"
-                    }}
-                  >
+                  <div className="w-full h-full grid place-items-center bg-[#111]">
                     <i className="nes-bcrikko mt-16" style={{ transform: "scale(2)", display: "block" }}></i>
 
                     <p className='mt-12' style={{ fontWeight: 900, fontSize: "2rem", color: "#ffffff" }}>{t('nickname')}</p>
@@ -105,15 +89,7 @@ function AboutPage() {
             {/* <h2 className="mt-4 text-2xl">{t('name')}</h2> */}
 
             <p className={`text-lg ${isDarkMode ? "text-lime-400" : "text-lime-700"}`}>{t('position')}</p>
-            <div className='moon-font'>
-              <BlurText
-                text={t('introduce_yourself')}
-                delay={30}
-                animateBy="letters"  // หรือ "letters" เพื่อแอนิเมทเป็นตัวอักษร
-                direction="top"  // หรือ "bottom" สำหรับทิศทางการแอนิเมท
-              />
-            </div>
-            {/* <p className='moon-font'>{t('introduce_yourself')}</p> */}
+            <p className='moon-font'>{t('introduce_yourself')}</p>
 
             <InfoSection
               isDarkMode={isDarkMode}
@@ -137,7 +113,7 @@ function AboutPage() {
               items={logoImgs}
               direction="horizontal"
               pauseOnHover={true}
-              size="clamp(8rem, 1rem + 20vmin, 25rem)"
+              size="clamp(6rem, 1rem + 10vmin, 15rem)" // ลดขนาดไอคอนในมือถือ
               duration="50s"
               bgColor={isDarkMode ? "#212529" : "#fff"}
               bgAccentColor={isDarkMode ? "#413f3f" : "#aeaeae"}

@@ -44,14 +44,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ isDarkMode, title, items, isT
           <ul className="nes-list !list-disc justify-items-start !ms-20 text-start moon-font">
             {items.map((item, index) => {
               if (typeof item === 'string') {
-                return <li key={index}>
-                  <BlurText
-                    text={item}
-                    delay={40}
-                    animateBy="letters"  // หรือ "letters" เพื่อแอนิเมทเป็นตัวอักษร
-                    direction="top"  // หรือ "bottom" สำหรับทิศทางการแอนิเมท
-                  />
-                </li>; // ถ้าเป็น string ให้แสดงใน list
+                return <li key={index}>{item}</li>; // ถ้าเป็น string ให้แสดงใน list
               }
               return null; // ถ้าไม่ใช่ string ให้ไม่แสดง
             })}

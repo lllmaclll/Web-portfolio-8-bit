@@ -4,6 +4,7 @@ import { ThemeProvider } from "./context/ThemeContext"; // นำเข้า Th
 import NavBar from "@/app/components/NavBar";
 import I18nProvider from "./context/I18nProvider";
 import Layout from "./components/Layout";
+import { AudioProvider } from "./context/AudioContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +31,14 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <I18nProvider>
           <ThemeProvider>
-            {/* <NavBar /> */}
-            <main>
-              <Layout>
-                {children}
-              </Layout>
-            </main>
+            <AudioProvider>
+              {/* <NavBar /> */}
+              <main>
+                <Layout>
+                  {children}
+                </Layout>
+              </main>
+            </AudioProvider>
           </ThemeProvider>
         </I18nProvider>
       </body>
