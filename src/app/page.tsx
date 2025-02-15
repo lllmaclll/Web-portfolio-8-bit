@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import "nes.css/css/nes.min.css";
 import AboutPage from "./backoffice/about/page";
 import ProjectPage from "./backoffice/project/page";
 import ContactPage from "./backoffice/contact/page";

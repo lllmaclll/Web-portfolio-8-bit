@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "./context/ThemeContext"; // นำเข้า ThemeProvider
-import NavBar from "@/app/components/NavBar";
+import { ThemeProvider } from "./context/ThemeContext";
+import { AudioProvider } from "./context/AudioContext";
 import I18nProvider from "./context/I18nProvider";
 import Layout from "./components/Layout";
-import { AudioProvider } from "./context/AudioContext";
+import "./globals.css";
+import "nes.css/css/nes.min.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,6 @@ export default function RootLayout({
         <I18nProvider>
           <ThemeProvider>
             <AudioProvider>
-              {/* <NavBar /> */}
               <main>
                 <Layout>
                   {children}

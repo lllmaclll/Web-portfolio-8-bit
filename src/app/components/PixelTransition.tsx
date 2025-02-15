@@ -113,11 +113,8 @@ function PixelTransition({
   return (
     <div
       ref={containerRef}
-      className={`
-        ${className}
-        bg-[#222] text-white rounded-[15px] border-2 border-white
-        w-[300px] max-w-full relative overflow-hidden
-      `}
+      className={`relative overflow-hidden rounded-[15px] border-2 border-white bg-[#222] text-white 
+        w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg ${aspectRatio} ${className}`}
       style={style}
       onMouseEnter={!isTouchDevice ? handleMouseEnter : undefined}
       onMouseLeave={!isTouchDevice ? handleMouseLeave : undefined}

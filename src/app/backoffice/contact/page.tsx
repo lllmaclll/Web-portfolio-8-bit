@@ -1,11 +1,11 @@
 'use client'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
+import { useTheme } from '@/app/context/ThemeContext';
 import FadeContent from '@/app/components/FadeContent';
 import FadeInLeft from '@/app/components/FadeInLeft';
 import ScrollToTop from '@/app/components/ScrollToTop';
-import { useTheme } from '@/app/context/ThemeContext';
-import { usePathname } from 'next/navigation';
-import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next';
 
 function ContactPage() {
   const { isDarkMode } = useTheme(); // ใช้ useTheme
@@ -27,10 +27,10 @@ function ContactPage() {
   };
 
   return (
-    <div className={`flex flex-col items-center p-8`}>
+    <div className={`card-container`}>
       <FadeContent blur={true} duration={2000} easing="ease-in-out" initialOpacity={0}>
         <FadeInLeft>
-          <section className={`mt-8 nes-container is-rounded ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"} w-[447.99px] sm:w-[512px] md:w-[575.99px] lg:w-[672px] xl:w-[895.99px]`}>
+          <section className={`nes-container is-rounded main-container-contact ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"}`}>
             <h2 className="text-2xl text-center">{t('contact')}</h2>
 
             <div className="nes-field !mt-4">

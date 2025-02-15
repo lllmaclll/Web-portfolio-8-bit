@@ -1,6 +1,5 @@
 'use client'
 import { TFunction } from "i18next";
-import BlurText from "./BlurText";
 
 interface ProjectCardProps {
     titleKey: string;

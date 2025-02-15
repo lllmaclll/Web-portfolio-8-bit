@@ -1,12 +1,12 @@
 'use client'; // บอกว่าเป็น Client Component
 import React, { useState } from "react";
 import Link from "next/link";
-import { FaSun, FaMoon, FaGlobe, FaVolumeMute, FaVolumeUp, FaHome, FaHamburger } from "react-icons/fa";
-import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { useTheme } from "../context/ThemeContext"; // ใช้ useTheme ที่นี่
 import { useTranslation } from 'react-i18next';
-import { useAudio } from "../context/AudioContext";
+import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaSun, FaMoon, FaGlobe, FaVolumeMute, FaVolumeUp, FaHome, FaHamburger } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext"; // ใช้ useTheme ที่นี่
+import { useAudio } from "../context/AudioContext";
 
 function NavBar() {
   const { isDarkMode, toggleTheme } = useTheme(); // ใช้ useTheme จาก context
@@ -22,7 +22,7 @@ function NavBar() {
   return (
     <nav className="!m-0 !p-3 flex justify-between items-center nes-container is-dark">
       <Link href={"/"} className="">
-        <button className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center lg:hidden">
+        <button className="icon-nav-1">
           <FaHome className="text-yellow-300 lg:hidden" size={24} />
         </button>
         <h1 className=" text-yellow-300 hidden lg:flex lg:items-center lg:text-3xl">
@@ -38,10 +38,10 @@ function NavBar() {
       </div>
 
       <div className="flex justify-center items-center gap-2">
-        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center lg:hidden">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="icon-nav">
           <FaHamburger className="text-yellow-300 lg:hidden" size={24} />
         </button>
-        <button onClick={toggleAudio} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none hidden lg:flex lg:justify-center lg:items-center">
+        <button onClick={toggleAudio} className="icon-nav-2">
           {isPlaying ? (
             <FaVolumeUp className="text-red-200" size={24} />
           ) : (
@@ -49,12 +49,12 @@ function NavBar() {
           )}
         </button>
         <div className="hidden lg:flex lg:justify-center lg:items-center">
-          <button onClick={changeLanguage} className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none xl:me-2">
+          <button onClick={changeLanguage} className="icon-nav-3">
             <FaGlobe className="text-sky-400" size={24} />
           </button>
           <div>{i18n.language.toUpperCase()}</div>
         </div>
-        <button onClick={toggleTheme} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none hidden lg:flex lg:justify-center lg:items-center">
+        <button onClick={toggleTheme} className="icon-nav-2">
           {isDarkMode ? (
             <FaMoon className="text-yellow-300" size={24} />
           ) : (
@@ -73,8 +73,6 @@ function NavBar() {
               exit={{ opacity: 0 }} 
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-100 backdrop-blur-3xl z-10"
-
-              // onClick={() => setIsMenuOpen(false)} // ปิดเมนูเมื่อคลิกที่พื้นหลัง
             />
             
             {/* เมนู */}
@@ -85,7 +83,7 @@ function NavBar() {
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 right-0 w-64 h-full bg-gray-800 p-5 flex flex-col items-center shadow-lg z-20"
             >
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="self-end w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="self-end icon-nav-4">
                 <MdOutlineRestaurantMenu className="text-yellow-300" size={24} />
               </button>
               <Link href="/" className="text-white text-lg py-2 sm:hidden">{t('home')}</Link>
@@ -94,13 +92,13 @@ function NavBar() {
               <Link href="/backoffice/contact" className="text-white text-lg py-2 sm:hidden">{t('contact')}</Link>
               
               <div className="flex gap-4 mt-4">
-                <button onClick={toggleAudio} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center">
+                <button onClick={toggleAudio} className="icon-nav-4">
                   {isPlaying ? <FaVolumeUp className="text-red-200" size={24} /> : <FaVolumeMute className="text-red-400" size={24} />}
                 </button>
-                <button onClick={changeLanguage} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center">
+                <button onClick={changeLanguage} className="icon-nav-4">
                   <FaGlobe className="text-sky-400" size={24} />
                 </button>
-                <button onClick={toggleTheme} className="w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center">
+                <button onClick={toggleTheme} className="icon-nav-4">
                   {isDarkMode ? <FaMoon className="text-yellow-300" size={24} /> : <FaSun className="text-yellow-500" size={24} />}
                 </button>
               </div>

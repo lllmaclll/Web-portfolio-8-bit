@@ -1,6 +1,5 @@
 'use client'
 import { useTranslation } from 'react-i18next';
-import BlurText from './BlurText';
 
 interface InfoSectionProps {
   isDarkMode: boolean;
@@ -41,7 +40,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ isDarkMode, title, items, isT
             </table>
           </div>
         ) : (
-          <ul className="nes-list !list-disc justify-items-start !ms-20 text-start moon-font">
+          <ul className="nes-list !list-disc justify-items-start text-start moon-font !ms-2 sm:!ms-10 md:!ms-20">
             {items.map((item, index) => {
               if (typeof item === 'string') {
                 return <li key={index}>{item}</li>; // ถ้าเป็น string ให้แสดงใน list

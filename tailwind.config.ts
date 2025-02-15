@@ -28,6 +28,12 @@ export default {
         scrollY: "scrollY var(--duration) linear infinite",
       },
       // for logo wall component end
+
+      // for contact responsive start
+      screens: {
+        "xs": "470px" //เพิ่ม breakpoint `--` ที่ 375px (หรือกำหนดค่าตามที่ต้องการ)
+      }
+      // for contact responsive end
     },
   },
   plugins: [],

@@ -21,7 +21,7 @@ const LogoWall: FC<LogoWallProps> = ({
   items = [],
   direction = "horizontal",
   pauseOnHover = false,
-  size = "clamp(8rem, 1rem + 30vmin, 25rem)",
+  size = "clamp(6rem, 1rem + 20vmin, 20rem)", // ปรับให้ responsive มากขึ้น
   duration = "60s",
   textColor = "#ffffff",
   bgColor = "#060606",
@@ -35,7 +35,7 @@ const LogoWall: FC<LogoWallProps> = ({
     "gap-[calc(var(--size)/14)]",
     "mx-auto",
     "max-w-full",
-    "p-[20px_10px]",
+    "p-[10px] sm:p-[15px] md:p-[20px]",
     direction === "vertical" && "flex-row justify-center h-full",
   ]
     .filter(Boolean)
@@ -80,7 +80,6 @@ const LogoWall: FC<LogoWallProps> = ({
             "flex-shrink-0",
             "flex",
             "items-center",
-            // "justify-around",
             "gap-[calc(var(--size)/14)]",
             "min-w-full",
             "animate-scrollX",
@@ -99,8 +98,8 @@ const LogoWall: FC<LogoWallProps> = ({
                 "rounded-md",
                 "object-contain",
                 "aspect-video",
-                "w-[var(--size)]",
-                "p-[calc(var(--size)/10)]",
+                "w-[var(--size)] sm:w-[calc(var(--size)*0.9)] md:w-[calc(var(--size)*0.8)]",
+                "p-[calc(var(--size)/10)] sm:p-[calc(var(--size)/12)] md:p-[calc(var(--size)/14)]",
                 direction === "vertical" &&
                   "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
               ]
@@ -135,8 +134,8 @@ const LogoWall: FC<LogoWallProps> = ({
                 "rounded-md",
                 "object-contain",
                 "aspect-video",
-                "w-[var(--size)]",
-                "p-[calc(var(--size)/10)]",
+                "w-[var(--size)] sm:w-[calc(var(--size)*0.9)] md:w-[calc(var(--size)*0.8)]",
+                "p-[calc(var(--size)/10)] sm:p-[calc(var(--size)/12)] md:p-[calc(var(--size)/14)]",
                 direction === "vertical" &&
                   "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
               ]
@@ -146,91 +145,12 @@ const LogoWall: FC<LogoWallProps> = ({
           ))}
         </div>
       </div>
-
-      {/* <div
-        className={marqueeClass + " marquee--reverse"}
-        onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-        onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-      >
-        <div
-          className={[
-            "flex-shrink-0",
-            "flex",
-            "items-center",
-            "justify-around",
-            "gap-[calc(var(--size)/14)]",
-            "min-w-full",
-            "animate-scrollX",
-            "reverse-x",
-            direction === "vertical" &&
-              "flex-col min-h-full animate-scrollY reverse-x",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          {items.map((item, idx) => (
-            <img
-              key={`rev-${idx}`}
-              src={item.imgUrl}
-              alt={item.altText}
-              className={[
-                "bg-[var(--color-bg-accent)]",
-                "rounded-md",
-                "object-contain",
-                "aspect-video",
-                "w-[var(--size)]",
-                "p-[calc(var(--size)/10)]",
-                direction === "vertical" &&
-                  "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            />
-          ))}
-        </div>
-        <div
-          aria-hidden="true"
-          className={[
-            "flex-shrink-0",
-            "flex",
-            "items-center",
-            "justify-around",
-            "gap-[calc(var(--size)/14)]",
-            "min-w-full",
-            "animate-scrollX",
-            "reverse-x",
-            direction === "vertical" &&
-              "flex-col min-h-full animate-scrollY reverse-x",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          {items.map((item, idx) => (
-            <img
-              key={`dup2-${idx}`}
-              src={item.imgUrl}
-              alt={item.altText}
-              className={[
-                "bg-[var(--color-bg-accent)]",
-                "rounded-md",
-                "object-contain",
-                "aspect-video",
-                "w-[var(--size)]",
-                "p-[calc(var(--size)/10)]",
-                direction === "vertical" &&
-                  "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            />
-          ))}
-        </div>
-      </div> */}
     </article>
   );
 };
 
 export default LogoWall;
+
 
 // ALSO NEEDED:
 //

@@ -1,10 +1,9 @@
 'use client';
-
 import React from 'react';
-import NavBar from '@/app/components/NavBar';
-import { useTheme } from '@/app/context/ThemeContext';
-import FadeInDown from './FadeInDown';
 import { usePathname } from 'next/navigation';
+import { useTheme } from '@/app/context/ThemeContext';
+import NavBar from '@/app/components/NavBar';
+import FadeInDown from './FadeInDown';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDarkMode } = useTheme(); // ใช้ ThemeContext เพื่อเปลี่ยนธีม

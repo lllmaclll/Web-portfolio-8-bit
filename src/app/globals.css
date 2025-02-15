@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* font start */
 @font-face {
   font-family: 'TAChaiLaiPixel';
   src: url('/fonts/TAChaiLai_Pixelforpersonal/TA ChaiLai_Pixel For Personal user.otf') format('opentype'),
@@ -17,15 +18,16 @@
   font-weight: normal;
   font-style: normal;
 }
+/* font end */
+
+body {
+  font-family: 'TAChaiLaiPixel', sans-serif !important;
+}
 
 .moon-font {
   font-family: 'MOONNight', sans-serif;
   font-size: 36px !important;
   line-height: 1;
-}
-
-body {
-  font-family: 'TAChaiLaiPixel', sans-serif !important;
 }
 
 /* background start */
@@ -71,6 +73,42 @@ body {
   }
 }
 /* for logo wall component end */
+
+.card-container {
+  @apply flex flex-col items-center p-8;
+}
+
+.main-container {
+  @apply mt-8 p-4 text-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl;
+}
+
+.main-container-contact {
+  @apply mt-8 p-4 w-[386.01px] xs:w-[447.99px] sm:w-[512px] md:w-[575.99px] lg:w-[672px] xl:w-[895.99px];
+}
+
+.content-about {
+  @apply mt-4 grid grid-cols-1 gap-4 gap-y-6;
+}
+
+.content-project {
+  @apply mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 gap-y-6;
+}
+
+.icon-nav-1 {
+  @apply w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center lg:hidden;
+}
+
+.icon-nav-2 {
+  @apply w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none hidden lg:flex lg:justify-center lg:items-center;
+}
+
+.icon-nav-3 {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none xl:me-2;
+}
+
+.icon-nav-4 {
+  @apply w-12 h-12 rounded-full bg-transparent hover:bg-[#3b4249] outline-none focus:outline-none flex justify-center items-center;
+}
 
 /* border start */
 @media (-webkit-device-pixel-ratio >= 0) and (resolution >= 0.001dpcm) {

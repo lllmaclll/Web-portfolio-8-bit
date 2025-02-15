@@ -1,16 +1,15 @@
 'use client'
+import React from 'react'
+import { useTranslation } from 'react-i18next';
+import { usePathname } from 'next/navigation';
+import { TypeAnimation } from 'react-type-animation';
+import { useTheme } from '@/app/context/ThemeContext';
 import PixelTransition from '@/app/components/PixelTransition'
-import React, { useEffect, useState } from 'react'
 import LogoWall from '@/app/components/LogoWall';
 import ScrollToTop from '@/app/components/ScrollToTop';
-import { useTheme } from '@/app/context/ThemeContext';
-import { useTranslation } from 'react-i18next';
 import FadeInLeft from '@/app/components/FadeInLeft';
 import FadeContent from '@/app/components/FadeContent';
 import InfoSection from '@/app/components/InfoSection';
-import { usePathname } from 'next/navigation';
-import { TypeAnimation } from 'react-type-animation';
-import BlurText from '@/app/components/BlurText';
 
 const logoImgs = [
   { imgUrl: "/images/icons8-html-logo-96.png", altText: "HTML" },
@@ -48,19 +47,19 @@ function AboutPage() {
   const pathname = usePathname(); // ดึง pathname ปัจจุบัน
 
   return (
-    <div className={`flex flex-col items-center p-8`}>
+    <div className={`card-container`}>
       <FadeContent blur={true} duration={2000} easing="ease-in-out" initialOpacity={0}>
         <FadeInLeft>
-          <section className={`mt-8 nes-container is-rounded ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"} p-4 text-center w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl`}>
-            <h2 className="md:flex text-2xl">{t('profile')}</h2>
+          <section className={`nes-container is-rounded main-container ${isDarkMode ? "is-dark" : "is-light bg-[#fff]"}`}>
+            <h2 className="text-2xl text-center">{t('profile')}</h2>
 
             <div className="w-full justify-items-center">
               <PixelTransition
                 firstContent={
                   <img
                     src="/images/profile.jpg"
-                    className="w-1/2 md:w-1/3 max-w-xs" 
-                    alt="default pixel transition content, a cat!"
+                    className="w-full" 
+                    alt="my profile"
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 }
@@ -86,58 +85,58 @@ function AboutPage() {
                 cursor={true}
               />
             </h2>
-            {/* <h2 className="mt-4 text-2xl">{t('name')}</h2> */}
 
             <p className={`text-lg ${isDarkMode ? "text-lime-400" : "text-lime-700"}`}>{t('position')}</p>
             <p className='moon-font'>{t('introduce_yourself')}</p>
 
-            <InfoSection
-              isDarkMode={isDarkMode}
-              title={t("personal_profile")}
-              items={[t("date_of_birth"), t("nationality"), t("age")]}
-            />
+            <div className={`content-about`}>
+              <InfoSection
+                isDarkMode={isDarkMode}
+                title={t("personal_profile")}
+                items={[t("date_of_birth"), t("nationality"), t("age")]}
+              />
 
-            <InfoSection
-              isDarkMode={isDarkMode}
-              title={t("work_experience")}
-              items={[t("work_line_1"), t("work_line_2")]}
-            />
+              <InfoSection
+                isDarkMode={isDarkMode}
+                title={t("work_experience")}
+                items={[t("work_line_1"), t("work_line_2")]}
+              />
 
-            <InfoSection
-              isDarkMode={isDarkMode}
-              title={t("education_history")}
-              items={[t("education_line_1"), t("education_line_2"), t("education_line_3")]}
-            />
+              <InfoSection
+                isDarkMode={isDarkMode}
+                title={t("education_history")}
+                items={[t("education_line_1"), t("education_line_2"), t("education_line_3")]}
+              />
 
-            <LogoWall
-              items={logoImgs}
-              direction="horizontal"
-              pauseOnHover={true}
-              size="clamp(6rem, 1rem + 10vmin, 15rem)" // ลดขนาดไอคอนในมือถือ
-              duration="50s"
-              bgColor={isDarkMode ? "#212529" : "#fff"}
-              bgAccentColor={isDarkMode ? "#413f3f" : "#aeaeae"}
-            />
+              <LogoWall
+                items={logoImgs}
+                direction="horizontal"
+                pauseOnHover={true}
+                size="clamp(6rem, 1rem + 10vmin, 15rem)" // ลดขนาดไอคอนในมือถือ
+                duration="50s"
+                bgColor={isDarkMode ? "#212529" : "#fff"}
+                bgAccentColor={isDarkMode ? "#413f3f" : "#aeaeae"}
+              />
 
-            <InfoSection
-              isDarkMode={isDarkMode}
-              title={t("skills")}
-              items={[
-                { category: "Programming Languages", examples: "HTML, CSS, JavaScript, TypeScript, Python, SQL, Dart, Flutter" },
-                { category: "Frontend Frameworks/Libraries", examples: "React.js, Vue.js, Svelte, Astro, Next.js" },
-                { category: "Backend Frameworks", examples: "Express.js, Elysia.js, Nest.js" },
-                { category: "CSS Frameworks", examples: "Bootstrap, Tailwind CSS, DaisyUI" },
-                { category: "Databases", examples: "MySQL, MongoDB, PostgreSQL, SQL Server, Firebase" },
-                { category: "ORM/ODM", examples: "Prisma, Sequelize, TypeORM, Drizzle (ORM) / Mongoose (ODM)" },
-                { category: "Runtime Environment", examples: "Node.js, Bun" },
-                { category: "Package Managers", examples: "NPM, PNPM, Yarn" },
-                { category: "Containerization & Virtualization", examples: "Docker" },
-                { category: "Version Control & Collaboration", examples: "Git, GitHub" },
-                { category: "API & Testing Tools", examples: "Postman" },
-              ]}
-              isTable={true}
-            />
-
+              <InfoSection
+                isDarkMode={isDarkMode}
+                title={t("skills")}
+                items={[
+                  { category: "Programming Languages", examples: "HTML, CSS, JavaScript, TypeScript, Python, SQL, Dart, Flutter" },
+                  { category: "Frontend Frameworks/Libraries", examples: "React.js, Vue.js, Svelte, Astro, Next.js" },
+                  { category: "Backend Frameworks", examples: "Express.js, Elysia.js, Nest.js" },
+                  { category: "CSS Frameworks", examples: "Bootstrap, Tailwind CSS, DaisyUI" },
+                  { category: "Databases", examples: "MySQL, MongoDB, PostgreSQL, SQL Server, Firebase" },
+                  { category: "ORM/ODM", examples: "Prisma, Sequelize, TypeORM, Drizzle (ORM) / Mongoose (ODM)" },
+                  { category: "Runtime Environment", examples: "Node.js, Bun" },
+                  { category: "Package Managers", examples: "NPM, PNPM, Yarn" },
+                  { category: "Containerization & Virtualization", examples: "Docker" },
+                  { category: "Version Control & Collaboration", examples: "Git, GitHub" },
+                  { category: "API & Testing Tools", examples: "Postman" },
+                ]}
+                isTable={true}
+              />
+            </div>
 
           </section>
         </FadeInLeft>
