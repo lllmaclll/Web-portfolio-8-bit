@@ -136,6 +136,13 @@ function AboutPage() {
                 ]}
                 isTable={true}
               />
+
+            <div className="text-center mt-2">
+              <a href="/files/Resume_Charuwat_Sronkerd.pdf" download="My_Resume.pdf" className="nes-btn is-primary">
+                {t('download_resume')}
+              </a>
+            </div>
+
             </div>
 
           </section>
