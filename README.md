@@ -48,12 +48,12 @@ To get started with this project, follow these steps:
 
 4. **Run the development server**:
 
-    To start the application in development mode, run:
+   To start the application in development mode, run:
    
    ```bash
    npm run dev
 
-   or:
+or:
 
    ```bash
    yarn dev
