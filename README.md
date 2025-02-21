@@ -27,7 +27,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/lllmaclll/Web-portfolio-8-bit.git
 
 2. **Navigate to the project directory**:
    
