@@ -32,7 +32,7 @@ To get started with this project, follow these steps:
 2. **Navigate to the project directory**:
    
    ```bash
-   cd your-repo-name
+   cd Web-portfolio-8-bit
 
 3. **Install the dependencies**:
    
