@@ -67,19 +67,19 @@ function NavBar() {
         {isMenuOpen && (
           <>
             {/* พื้นหลังเบลอและโปร่งแสงครอบคลุมทั้งหน้าจอ */}
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 0.5 }} 
-              exit={{ opacity: 0 }} 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-100 backdrop-blur-3xl z-10"
             />
-            
+
             {/* เมนู */}
-            <motion.div 
-              initial={{ x: "100%" }} 
-              animate={{ x: 0 }} 
-              exit={{ x: "100%" }} 
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed top-0 right-0 w-64 h-full bg-gray-800 p-5 flex flex-col items-center shadow-lg z-20"
             >
@@ -90,7 +90,7 @@ function NavBar() {
               <Link href="/backoffice/about" className="text-white text-lg py-2 sm:hidden">{t('about')}</Link>
               <Link href="/backoffice/project" className="text-white text-lg py-2 sm:hidden">{t('project')}</Link>
               <Link href="/backoffice/contact" className="text-white text-lg py-2 sm:hidden">{t('contact')}</Link>
-              
+
               <div className="flex gap-4 mt-4">
                 <button onClick={toggleAudio} className="icon-nav-4">
                   {isPlaying ? <FaVolumeUp className="text-red-200" size={24} /> : <FaVolumeMute className="text-red-400" size={24} />}
