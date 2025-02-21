@@ -12,17 +12,17 @@ import FadeContent from '@/app/components/FadeContent';
 import InfoSection from '@/app/components/InfoSection';
 
 const logoImgs = [
-  { imgUrl: "/icons/icons8-html-logo-96.png", altText: "HTML" },
-  { imgUrl: "/icons/icons8-css-logo-96.png", altText: "CSS" },
-  { imgUrl: "/icons/icons8-javascript-96.png", altText: "JavaScript" },
-  { imgUrl: "/icons/icons8-typescript-96.png", altText: "TypeScript" },
+  { imgUrl: "/icons/html-logo.png", altText: "HTML" },
+  { imgUrl: "/icons/css-logo.png", altText: "CSS" },
+  { imgUrl: "/icons/javascript-logo.png", altText: "JavaScript" },
+  { imgUrl: "/icons/typescript-logo.png", altText: "TypeScript" },
   { imgUrl: "/icons/python-logo.png", altText: "Python" },
   { imgUrl: "/icons/react-logo.png", altText: "React.js" },
   { imgUrl: "/icons/vue-logo.png", altText: "Vue.js" },
-  { imgUrl: "/icons/svelt-logo.png", altText: "Svelte.js" },
-  { imgUrl: "/icons/nextjs-logo.jpg", altText: "Next.js" },
+  { imgUrl: "/icons/svelte-logo.png", altText: "Svelte.js" },
+  { imgUrl: "/icons/nextjs-logo.png", altText: "Next.js" },
   { imgUrl: "/icons/astro-logo.png", altText: "Astro.js" },
-  { imgUrl: "/icons/expressjs-logo.png", altText: "Express.js" },
+  { imgUrl: "/icons/express-logo.png", altText: "Express.js" },
   { imgUrl: "/icons/elysia-logo.png", altText: "Elysia.js" },
   { imgUrl: "/icons/bootstrap-logo.png", altText: "Bootstrap CSS" },
   { imgUrl: "/icons/tailwind-logo.png", altText: "Tailwind CSS" },
@@ -30,14 +30,14 @@ const logoImgs = [
   { imgUrl: "/icons/firebase-logo.png", altText: "Firebase" },
   { imgUrl: "/icons/git-logo.png", altText: "Git" },
   { imgUrl: "/icons/mariadb-logo.png", altText: "MariaDB" },
-  { imgUrl: "/icons/mongoose-logo.png", altText: "Mongoose ODM" },
-  { imgUrl: "/icons/mongo-logo.png", altText: "MongoDB" },
-  { imgUrl: "/icons/mysql-logo.png", altText: "MySQL" },
+  { imgUrl: "/icons/mongoose-odm-logo.png", altText: "Mongoose ODM" },
+  { imgUrl: "/icons/mongodb-logo.png", altText: "MongoDB" },
+  { imgUrl: "/icons/mysqldb-logo.png", altText: "MySQL" },
   { imgUrl: "/icons/nodejs-logo.png", altText: "Node.js" },
   { imgUrl: "/icons/postgresql-logo.png", altText: "PostgresSQL" },
-  { imgUrl: "/icons/prisma-logo.png", altText: "Prisma ORM" },
+  { imgUrl: "/icons/prisma-orm-logo.png", altText: "Prisma ORM" },
   { imgUrl: "/icons/sequelize-logo.png", altText: "Sequelize ORM" },
-  { imgUrl: "/icons/sqlserver-logo.png", altText: "SQL-Server" },
+  { imgUrl: "/icons/sql-server-logo.png", altText: "SQL-Server" },
   { imgUrl: "/icons/typeorm-logo.png", altText: "TypeORM" },
 ];
 
@@ -115,7 +115,7 @@ function AboutPage() {
                 size="clamp(6rem, 1rem + 10vmin, 15rem)" // ลดขนาดไอคอนในมือถือ
                 duration="50s"
                 bgColor={isDarkMode ? "#212529" : "#fff"}
-                bgAccentColor={isDarkMode ? "#413f3f" : "#aeaeae"}
+                bgAccentColor={isDarkMode ? "#413f3f" : "#6d6d6d"}
               />
 
               <InfoSection
