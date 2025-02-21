@@ -41,23 +41,12 @@ To get started with this project, follow these steps:
    ```bash
    npm install
 
-   or:
-
-   ```bash
-   yarn install
-
 4. **Run the development server**:
 
    To start the application in development mode, run:
    
    ```bash
    npm run dev
-
-   or:
-
-   ```bash
-   yarn dev
-   ```
 
 5. **Open your browser and go to http://localhost:3000 to see your portfolio in action.**:
    
